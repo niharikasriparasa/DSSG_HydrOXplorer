@@ -23,5 +23,5 @@ jobs:
     - name: Build the Docker image
       run: docker build -t hydroapp .
     - name: Push the Docker image
-      run: docker push hydroapp:latest
+      run: docker push nihaparasa/hydroapp:latest
       
