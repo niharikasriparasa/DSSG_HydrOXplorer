@@ -2,7 +2,7 @@ name: CD pipeline
 
 on:
   workflow_run:
-    workflows: [ "Docker Image CI" ]
+    workflows: [ "CI pipeline" ]
     types:
       - completed
   #pull_request:
