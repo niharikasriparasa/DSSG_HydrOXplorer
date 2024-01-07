@@ -16,9 +16,9 @@ jobs:
 
     steps:
     - name : Pull Image from Docker Hub
-    - run : docker pull nihaparasa/hydroapp:latest
+    - run : sudo docker pull nihaparasa/hydroapp:latest
     - name : Delete the old docker container
-    - run : docker rm -f hydroapp-container || true
+    - run : sudo docker rm -f hydroapp-container || true
     - name : Run docker container with latest image
     - run : sudo docker run -td -p 8080:8080 --name hydroapp-container nihaparasa/hydroapp
     
