@@ -1,12 +1,10 @@
-name: CD pipeline
+name: CD Pipeline
 
 on:
   workflow_run:
-    workflows: [ "CI pipeline" ]
+    workflows: ["CI pipeline"]
     types:
       - completed
-  #pull_request:
-    #branches: [ "master" ]
 
 jobs:
 
@@ -15,11 +13,9 @@ jobs:
     runs-on: self-hosted
 
     steps:
-    - name : Pull Image from Docker Hub
-    - run : sudo docker pull nihaparasa/hydroapp:latest
-    - name : Delete the old docker container
-    - run : sudo docker rm -f hydroapp-container || true
-    - name : Run docker container with latest image
-    - run : sudo docker run -td -p 8080:8080 --name hydroapp-container nihaparasa/hydroapp
-    
-      
+    - name: Pull Docker image
+      run: sudo docker pull nihaparasa/hydroapp:latest
+    - name: Delete Old docker container
+      run: sudo docker rm -f hydroapp || true
+    - name: Run Docker Container
+      run: sudo docker run -d -p 8080:8080 --name hydroapp-container nihaparasa/hydroapp
