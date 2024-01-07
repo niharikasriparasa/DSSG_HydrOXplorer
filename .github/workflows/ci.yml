@@ -21,7 +21,7 @@ jobs:
       run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
       
     - name: Build the Docker image
-      run: docker build -t fireapp .
+      run: docker build -t hydroapp .
     - name: Push the Docker image
-      run: docker push nihaparasa/fireapp:fireapp
+      run: docker push nihaparasa/hydroapp:latest
       
