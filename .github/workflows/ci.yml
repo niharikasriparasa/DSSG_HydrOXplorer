@@ -23,5 +23,5 @@ jobs:
     - name: Build the Docker image
       run: docker build -t fireapp .
     - name: Push the Docker image
-      run: docker push nihaparasa/fireapp:latest
+      run: docker push nihaparasa/fireapp:fireapp
       
